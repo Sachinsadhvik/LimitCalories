@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{display:flex;
+        align-items:center;
+        justify-content:center;
+        position:absolute;
+        right:0;
+        left:0;
+        bottom:0;
+        top:0;
+        border: solid white;
+        background-color:rgb(230, 216, 216, 0.3)
+        
+       
+        }
+    body{
+    background: url('https://the.ismaili/sites/default/files/formacao_1600x1200-uma-alimentacao-saudavel-previne-a-hipertensao-arterial.jpg') no-repeat center center fixed;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    
+    }
+  
+    </style>
+</head>
+<body>
+    <div class="container" >
+      
+        <form  action="/auth/signin" method="POST">
+            <h2 class="text-center text-white btn-warning "> Sign In</h2><br>
+            <button  class="btn btn-primary"> Username </button> 
+   <input type="username" name="username" placeholder="enter your username"><br> <br>
+   <button  class="btn btn-primary"> password </button> 
+
+   <input type="password" name="password" placeholder="password"> <br> <br>
+    &emsp;  &emsp;&emsp;  &emsp;  &emsp;  <button type="submit" class="btn btn-danger" id="submit"> Signin</button> <br> 
+    &emsp;<a href="/auth/register" class="text-dark btn-light text-decoration-none ">Register</a>   &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;
+   <a href="../ad/signin" class="text-dark btn-light text-decoration-none"> I'm admin</a>
+    </form>
+    <p style="color:red"> <%= message %>   </p>
+</div>
+</body>
+</html>

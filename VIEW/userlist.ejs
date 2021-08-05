@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<%- include('adminpartial'); %>
+<body>
+<h2> users list </h2> <br>
+<!--edit Button trigger modal -->
+<button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#editModalCenter">
+    Edit
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="editModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Update Meal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+            <form action="/ad/edit" method="POST">
+                <label> Username</label>
+                <input type="name" name="username" placeholder="enter username"> <br><br>
+                <label> First Name</label>
+                <input type="name" name="firstname" placeholder="enter updated firstname"> <br><br>
+                <label> Last Name</label>
+                <input type="name" name="lastname" placeholder="enter updated lastname "> <br><br>
+                <label> Calories/day</label>
+                <input type="number" name="calorielimit" placeholder="enter updated calorie limit"> <br><br>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button name="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+        </div>
+       
+         
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+    Delete
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Delete Meal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+            <form action="/ad/delete" method="POST">
+                <label> User Name</label>
+                <input type="name" name="username" placeholder="enter username"><br>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button name="submit" class="btn btn-primary">delete</button>
+                    </div>
+                </form>
+        </div>
+       
+         
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th scope="col">USERNAME </th>
+        <th scope="col">FIRST NAME</th>
+        <th scope="col">LAST NAME</th>
+        <th scope="col"> EMAIL</th>
+        <th scope="col">CALORIE PER DAY</th>
+      </tr>
+      </tr>
+    </thead>
+    <tbody>
+        <% users.forEach((user)=>{ %>
+        <tr>
+          <th scope="row"><%= user.username %></th>
+          <td><%= user.firstname %> </td>
+          <td><%= user.lastname %> </td>
+          <td><%= user.email %>  </td>
+          <td><%= user.calorielimit %>  </td>
+          
+        </tr>
+         <% })  %> 
+   </tbody>
+   </table>
+  
+</body>
+</html>
