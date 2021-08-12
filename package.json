@@ -4,7 +4,7 @@
   "description": "related to nutrify",
   "main": "index.js",
   "scripts": {
-    "start-express": "nodemon nutrifyserver.js",
+    "start": "nodemon nutrifyserver.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
