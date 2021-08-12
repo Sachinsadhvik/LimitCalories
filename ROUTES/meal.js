@@ -48,7 +48,7 @@ router.post('/delete',(req,res)=>{
 deleteMeal(req.body.mealId).then((mealId)=>{
 res.redirect('/meal/list')
 }).catch((err)=>{
-   res.redirect("back")
+   res.redirect('/meal/list')
 })
 })
 
@@ -56,7 +56,7 @@ router.post('/edit',(req,res)=>{
 editMeal(req.body, req.body.mealId).then(()=>{
 res.redirect('/meal/list')
 }).catch((err)=>{
-   res.redirect("back")
+   res.redirect("/meal/list")
 })
 })
 
@@ -85,12 +85,13 @@ router.post('/create',(req,res)=>{
 })
 
 router.post('/date',MealAuth,(req,res)=>{
-//console.log(req.userDetails, req.body)
-mealList(req.userDetails.username,req.body.date).then((arr)=>{
-        res.render("meallist", {
-            meals: arr[0],
-            calorielimit : arr[1]
-        })
-})
+console.log(req.userDetails, req.body)
+if(req.body.date!=''){mealList(req.userDetails.username,req.body.date).then((arr)=>{
+    res.render("meallist", {
+        meals: arr[0],
+        calorielimit : arr[1]
+    })
+})}
+else {res.redirect("/meal/list")}
 })
 module.exports=router;
