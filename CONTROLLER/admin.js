@@ -63,7 +63,7 @@ allMeals=(date)=>{
                  meals= await MealModel.find({datetime: { $gte: new Date(x).toISOString().slice(0,10)}}).sort({ datetime: 1 })
       resolve(meals)
         })}
-    
+     
 
 
 

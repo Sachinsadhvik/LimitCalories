@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.set('views','VIEW');
 app.set('view engine',"ejs");
-
+port = process.env.PORT || 3999
 
 app.use(express.static('STATIC'))
 app.use('/', index);
@@ -15,4 +15,4 @@ app.get('/',(req,res)=>{
     res.render("mainpage")
 })
 
-app.listen(3999,()=>{console.log("server started")})
+app.listen(port,()=>{console.log("server started")})

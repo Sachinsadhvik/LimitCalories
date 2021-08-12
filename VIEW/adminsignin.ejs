@@ -1,24 +1,5 @@
+
 <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="padding: 250px;">
-    <h1>signin page</h1>
-       
-        <label> Admin name</label>
-   <input type="name" name="username" placeholder="enter your username"><br>
-   <label>Password</label> 
-   <input type="password" name="password" placeholder="password"> <br>
-   <button type="submit"> Signin</button> 
-    </form>
-    <p style="color:red"> <%= message %>   </p>
-</body>
-</html> -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     
@@ -73,7 +54,83 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
     <p style="color:red"> <%= message %>   </p>
 </div>
 </body>
-</html>
+</html> -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo18s0YpTBbDtv3XUhKjbq7OiWKf-lmQgd6fQn50v-Xe_cmGfr9ygcfoGSbQ3vqFmJqMA&usqp=CAU">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin page</title>
+    <style>
+        form {
+            display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:7%;
+   
+        }
+        body{
+            background: url('https://the.ismaili/sites/default/files/formacao_1600x1200-uma-alimentacao-saudavel-previne-a-hipertensao-arterial.jpg') no-repeat center center fixed;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+        .navbar {
+ background: white;
+ font-size: 25px;
+        }
+        .dummy {
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class=" navbar-brand" href="#" >
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo18s0YpTBbDtv3XUhKjbq7OiWKf-lmQgd6fQn50v-Xe_cmGfr9ygcfoGSbQ3vqFmJqMA&usqp=CAU" width="30" height="30" class="d-inline-block align-top" alt="">
+          Nutrify
+        </a>
+      </nav>
+    <form  action="/ad/signin" method="POST">
+    <div class="card " style="width: 24rem; opacity: .9;">
+        <div class="card-body">
+            <h2 class="text-center">Admin Sign-in</h2> <br>
+    <div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Username</span> </div>
+        <input type="username" name="username" class="form-control" placeholder="enter your username"><br> 
+       </div>
+       
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">password</span> </div>
+        <input type="password" name="password" class="form-control" placeholder="password">
+      
+   
+</div>
+    &emsp;  &emsp;  &emsp;  &emsp;  &emsp;&emsp;&emsp;  <button type="submit" name="button" class=" btn btn-danger" >Signin</button> 
+
+          <p style="color:red"> <%= message %>   </p>   
+</div>
+</div>
+
+</form>
+<footer class="footer text-black">@https://github.com/Sachinsadhvik</footer>
+<span class="dummy">username: admin00
+    password : 1234</span>
+</body>
+</html>
 
 

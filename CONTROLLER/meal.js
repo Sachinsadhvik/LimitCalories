@@ -27,7 +27,7 @@ return new Promise( async(resolve,reject)=>{
     }
     console.log(typeof(args[0]),x)
 
-         meals= await MealModel.find({ $and: [{ username: username },    { datetime: { $gte: new Date(x).toISOString().slice(0,10) } } ] }).sort({ datetime: 1 })
+         meals= await MealModel.find({ $and: [{ username: username },{ datetime: { $gte: new Date(x).toISOString().slice(0,10) } } ] }).sort({ datetime: 1 })
       maxcalories= await MemberModel.find({username:username})
       let arr=[meals, maxcalories[0].calorielimit]
        if(meals){resolve(arr)}
