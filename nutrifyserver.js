@@ -13,7 +13,7 @@ app.use(express.static('STATIC'))
 app.use('/', index);
 
 app.get('/',(req,res)=>{
-    res.render("mainpage")
+    res.redirect("/auth/signin")
 })
 
 app.listen(port,()=>{console.log("server started")})
